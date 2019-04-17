@@ -1,0 +1,11 @@
+PLRUCache_mux_83_512_2_1
+PLRUCache_mux_83_24_2_1
+PLRUCache_validArray_V
+PLRUCache_tagArray_V_0
+PLRUCache_dataArray_V_0
+PLRUCache_dram_m_axi
+ReadHit
+WriteHit
+ReadMiss
+WriteMiss
+PLRUCache

@@ -1,71 +1,71 @@
-INFO-FLOW: Workspace /home/yzou/LRUCache/solution1 opened at Tue Apr 16 19:30:04 EDT 2019
+INFO-FLOW: Workspace /home/yzou/LRUCache/solution1 opened at Wed Apr 17 12:02:28 EDT 2019
 Execute     config_clock -quiet -name default -period 5 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
 Execute     open_platform DefaultPlatform 
-Execute     import_lib /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute     import_lib /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/dsp48e1.hlp 
 Execute       get_default_platform 
 Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
 Execute       config_chip_info -quiet -speed medium 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
-Command     import_lib done; 0.2 sec.
-Execute     source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7.gen 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
-Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
-Command         ap_source done; 0.17 sec.
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.17 sec.
-Command     ap_source done; 0.17 sec.
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.24 sec.
+Execute     source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.15 sec.
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
 Execute     open_platform DefaultPlatform 
-Execute     import_lib /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
-Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
-Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_hp.hlp 
-Execute     source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
-Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     import_lib /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+Execute     source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
 Execute     set_part xc7k325tffg900-2 
 Execute       add_library xilinx/kintex7/kintex7:xc7k325t:ffg900:-2 
 Execute         get_default_platform 
@@ -103,7 +103,11 @@ Execute     config_rtl -vivado_synth_strategy=default
 Execute       send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_synth_strategy config_export -vivado_synth_strategy 
 WARNING: [HLS 200-483] The 'config_rtl -vivado_synth_strategy' command is deprecated and will be removed in a future release. Use 'config_export -vivado_synth_strategy' as its replacement.
 Execute       config_export -vivado_synth_strategy default 
-Command   open_solution done; 0.8 sec.
+Execute     config_export -vivado_impl_strategy=default 
+Execute     config_export -vivado_phys_opt=place 
+Execute     config_export -vivado_synth_design_args -directive sdx_optimization_effort_high 
+Execute     config_export -vivado_synth_strategy=default 
+Command   open_solution done; 0.6 sec.
 Execute   set_part xc7k325tffg900-2 
 Execute     add_library xilinx/kintex7/kintex7:xc7k325t:ffg900:-2 
 Execute       get_default_platform 
@@ -154,8 +158,588 @@ Execute       is_encrypted LRUCache/src/cache.cpp
 Execute       get_default_platform 
 INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
-Execute       clang  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "LRUCache/src/cache.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp" 
-INFO-FLOW: exec /tools/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E LRUCache/src/cache.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2018.3/common/technology/autopilot -I /tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp
-Command       clang done; 2.31 sec.
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "LRUCache/src/cache.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp" 
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E LRUCache/src/cache.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp
+Command       clang done; 2.12 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp std=gnu++98 
-INFO-FLOW: exec /tools/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.3 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp"  -o "/home/yzou/LRUCache/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -o /home/yzou/LRUCache/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.93 sec.
+INFO-FLOW: Done: GCC PP time: 5.3 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp std=gnu++98 -directive=/home/yzou/LRUCache/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/yzou/LRUCache/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.55 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp std=gnu++98 -directive=/home/yzou/LRUCache/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/yzou/LRUCache/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.51 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/yzou/LRUCache/solution1/.autopilot/db/xilinx-dataflow-lawyer.cache.pp.0.cpp.diag.yml /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/yzou/LRUCache/solution1/.autopilot/db/xilinx-dataflow-lawyer.cache.pp.0.cpp.out.log 2> /home/yzou/LRUCache/solution1/.autopilot/db/xilinx-dataflow-lawyer.cache.pp.0.cpp.err.log 
+Command       ap_eval done; 0.92 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/yzou/LRUCache/solution1/.autopilot/db/tidy-3.1.cache.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/yzou/LRUCache/solution1/.autopilot/db/tidy-3.1.cache.pp.0.cpp.out.log 2> /home/yzou/LRUCache/solution1/.autopilot/db/tidy-3.1.cache.pp.0.cpp.err.log 
+Command         ap_eval done; 1 sec.
+Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/yzou/LRUCache/solution1/.autopilot/db/xilinx-legacy-rewriter.cache.pp.0.cpp.out.log 2> /home/yzou/LRUCache/solution1/.autopilot/db/xilinx-legacy-rewriter.cache.pp.0.cpp.err.log 
+Command         ap_eval done; 1.2 sec.
+Command       tidy_31 done; 2.29 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 3.7 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/yzou/LRUCache/solution1/.autopilot/db/cache.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/yzou/LRUCache/solution1/.autopilot/db/cache.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.01 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/yzou/LRUCache/solution1/.autopilot/db/cache.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/yzou/LRUCache/solution1/.autopilot/db/cache.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/yzou/LRUCache/solution1/.autopilot/db/cache.bc" 
+INFO-FLOW: exec /opt/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/yzou/LRUCache/solution1/.autopilot/db/cache.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/yzou/LRUCache/solution1/.autopilot/db/cache.bc
+Command       clang done; 1.8 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/yzou/LRUCache/solution1/.autopilot/db/cache.g.bc -hls-opt -except-internalize PLRUCache -L/opt/Xilinx/Vivado/2018.3/lnx64/lib -lhlsm -lhlsmc++ -o /home/yzou/LRUCache/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.07 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 441.945 ; gain = 0.086 ; free physical = 417 ; free virtual = 29060
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 441.945 ; gain = 0.086 ; free physical = 417 ; free virtual = 29060
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/yzou/LRUCache/solution1/.autopilot/db/a.pp.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.2 sec.
+Execute         llvm-ld /home/yzou/LRUCache/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2018.3/lnx64/lib -lfloatconversion -o /home/yzou/LRUCache/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.73 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top PLRUCache -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/yzou/LRUCache/solution1/.autopilot/db/a.g.0.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.22 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 442.047 ; gain = 0.188 ; free physical = 405 ; free virtual = 29054
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/yzou/LRUCache/solution1/.autopilot/db/a.g.1.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/yzou/LRUCache/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] LRUCache/src/cache.cpp:101: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 442.047 ; gain = 0.188 ; free physical = 402 ; free virtual = 29051
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/yzou/LRUCache/solution1/.autopilot/db/a.g.1.bc to /home/yzou/LRUCache/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/yzou/LRUCache/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/yzou/LRUCache/solution1/.autopilot/db/a.o.1.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (LRUCache/src/cache.cpp:254) in function 'PLRUCache' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (LRUCache/src/cache.cpp:261) in function 'PLRUCache' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (LRUCache/src/cache.cpp:99) in function 'WriteMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (LRUCache/src/cache.cpp:108) in function 'WriteMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (LRUCache/src/cache.cpp:133) in function 'WriteMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (LRUCache/src/cache.cpp:28) in function 'ReadMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (LRUCache/src/cache.cpp:37) in function 'ReadMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (LRUCache/src/cache.cpp:65) in function 'ReadMiss' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (LRUCache/src/cache.cpp:164) in function 'WriteHit' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (LRUCache/src/cache.cpp:182) in function 'WriteHit' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (LRUCache/src/cache.cpp:213) in function 'ReadHit' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (LRUCache/src/cache.cpp:226) in function 'ReadHit' completely with a factor of 8.
+INFO: [XFORM 203-101] Partitioning array 'tagArray.V'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'dataArray.V'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'tag.V' (LRUCache/src/cache.cpp:251) in dimension 1 completely.
+Command         transform done; 0.45 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/yzou/LRUCache/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (LRUCache/src/cache.cpp:119:2) in function 'WriteMiss'... converting 18 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (LRUCache/src/cache.cpp:149:21) to (LRUCache/src/cache.cpp:175:12) in function 'WriteHit'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (LRUCache/src/cache.cpp:51:2) in function 'ReadMiss'... converting 18 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (LRUCache/src/cache.cpp:198:21) to (LRUCache/src/cache.cpp:225:6) in function 'ReadHit'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (LRUCache/src/cache.cpp:268:6) in function 'PLRUCache'... converting 17 basic blocks.
+Command         transform done; 0.24 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 570.004 ; gain = 128.145 ; free physical = 377 ; free virtual = 29028
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build /home/yzou/LRUCache/solution1/.autopilot/db/a.o.2.bc -o /home/yzou/LRUCache/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 0.48 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 570.004 ; gain = 128.145 ; free physical = 345 ; free virtual = 28996
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 2.43 sec.
+Command     elaborate done; 16.11 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'PLRUCache' ...
+Execute       ap_set_top_model PLRUCache 
+Execute       get_model_list PLRUCache -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model PLRUCache 
+Execute       preproc_iomode -model WriteMiss 
+Execute       preproc_iomode -model ReadMiss 
+Execute       preproc_iomode -model WriteHit 
+Execute       preproc_iomode -model ReadHit 
+Execute       get_model_list PLRUCache -filter all-wo-channel 
+INFO-FLOW: Model list for configure: ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO-FLOW: Configuring Module : ReadHit ...
+Execute       set_default_model ReadHit 
+Execute       apply_spec_resource_limit ReadHit 
+INFO-FLOW: Configuring Module : WriteHit ...
+Execute       set_default_model WriteHit 
+Execute       apply_spec_resource_limit WriteHit 
+INFO-FLOW: Configuring Module : ReadMiss ...
+Execute       set_default_model ReadMiss 
+Execute       apply_spec_resource_limit ReadMiss 
+INFO-FLOW: Configuring Module : WriteMiss ...
+Execute       set_default_model WriteMiss 
+Execute       apply_spec_resource_limit WriteMiss 
+INFO-FLOW: Configuring Module : PLRUCache ...
+Execute       set_default_model PLRUCache 
+Execute       apply_spec_resource_limit PLRUCache 
+INFO-FLOW: Model list for preprocess: ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO-FLOW: Preprocessing Module: ReadHit ...
+Execute       set_default_model ReadHit 
+Execute       cdfg_preprocess -model ReadHit 
+Execute       rtl_gen_preprocess ReadHit 
+INFO-FLOW: Preprocessing Module: WriteHit ...
+Execute       set_default_model WriteHit 
+Execute       cdfg_preprocess -model WriteHit 
+Execute       rtl_gen_preprocess WriteHit 
+INFO-FLOW: Preprocessing Module: ReadMiss ...
+Execute       set_default_model ReadMiss 
+Execute       cdfg_preprocess -model ReadMiss 
+Execute       rtl_gen_preprocess ReadMiss 
+INFO-FLOW: Preprocessing Module: WriteMiss ...
+Execute       set_default_model WriteMiss 
+Execute       cdfg_preprocess -model WriteMiss 
+Execute       rtl_gen_preprocess WriteMiss 
+INFO-FLOW: Preprocessing Module: PLRUCache ...
+Execute       set_default_model PLRUCache 
+Execute       cdfg_preprocess -model PLRUCache 
+Execute       rtl_gen_preprocess PLRUCache 
+INFO-FLOW: Model list for synthesis: ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ReadHit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ReadHit 
+Execute       schedule -model ReadHit 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 17.28 seconds; current allocated memory: 117.246 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.sched.adb -f 
+INFO-FLOW: Finish scheduling ReadHit.
+Execute       set_default_model ReadHit 
+Execute       bind -model ReadHit 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=ReadHit
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 117.741 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.verbose.bind.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.bind.adb -f 
+INFO-FLOW: Finish binding ReadHit.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'WriteHit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model WriteHit 
+Execute       schedule -model WriteHit 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 118.128 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.sched.adb -f 
+INFO-FLOW: Finish scheduling WriteHit.
+Execute       set_default_model WriteHit 
+Execute       bind -model WriteHit 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=WriteHit
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 118.580 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.verbose.bind.rpt -verbose -f 
+Command       report done; 0.11 sec.
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.bind.adb -f 
+INFO-FLOW: Finish binding WriteHit.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ReadMiss' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ReadMiss 
+Execute       schedule -model ReadMiss 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 119.052 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.sched.adb -f 
+INFO-FLOW: Finish scheduling ReadMiss.
+Execute       set_default_model ReadMiss 
+Execute       bind -model ReadMiss 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=ReadMiss
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 119.904 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.bind.adb -f 
+INFO-FLOW: Finish binding ReadMiss.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'WriteMiss' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model WriteMiss 
+Execute       schedule -model WriteMiss 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 120.369 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.sched.adb -f 
+INFO-FLOW: Finish scheduling WriteMiss.
+Execute       set_default_model WriteMiss 
+Execute       bind -model WriteMiss 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=WriteMiss
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 121.188 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.bind.adb -f 
+INFO-FLOW: Finish binding WriteMiss.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'PLRUCache' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model PLRUCache 
+Execute       schedule -model PLRUCache 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 121.436 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.sched.adb -f 
+INFO-FLOW: Finish scheduling PLRUCache.
+Execute       set_default_model PLRUCache 
+Execute       bind -model PLRUCache 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=PLRUCache
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.44 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.47 seconds; current allocated memory: 122.094 MB.
+Execute       report -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.verbose.bind.rpt -verbose -f 
+Command       report done; 0.32 sec.
+Execute       db_write -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.bind.adb -f 
+INFO-FLOW: Finish binding PLRUCache.
+Execute       get_model_list PLRUCache -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess ReadHit 
+Execute       rtl_gen_preprocess WriteHit 
+Execute       rtl_gen_preprocess ReadMiss 
+Execute       rtl_gen_preprocess WriteMiss 
+Execute       rtl_gen_preprocess PLRUCache 
+INFO-FLOW: Model list for RTL generation: ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ReadHit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model ReadHit -vendor xilinx -mg_file /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'PLRUCache_mux_83_512_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ReadHit'.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 123.030 MB.
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ReadHit -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yzou/LRUCache/solution1/syn/systemc/ReadHit -synmodules ReadHit WriteHit ReadMiss WriteMiss PLRUCache 
+Execute       gen_rtl ReadHit -style xilinx -f -lang vhdl -o /home/yzou/LRUCache/solution1/syn/vhdl/ReadHit 
+Execute       gen_rtl ReadHit -style xilinx -f -lang vlog -o /home/yzou/LRUCache/solution1/syn/verilog/ReadHit 
+Execute       gen_tb_info ReadHit -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit -p /home/yzou/LRUCache/solution1/.autopilot/db 
+Execute       report -model ReadHit -o /home/yzou/LRUCache/solution1/syn/report/ReadHit_csynth.rpt -f 
+Execute       report -model ReadHit -o /home/yzou/LRUCache/solution1/syn/report/ReadHit_csynth.xml -f -x 
+Execute       report -model ReadHit -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.verbose.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -model ReadHit -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'WriteHit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model WriteHit -vendor xilinx -mg_file /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'WriteHit'.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 125.619 MB.
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       gen_rtl WriteHit -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yzou/LRUCache/solution1/syn/systemc/WriteHit -synmodules ReadHit WriteHit ReadMiss WriteMiss PLRUCache 
+Execute       gen_rtl WriteHit -style xilinx -f -lang vhdl -o /home/yzou/LRUCache/solution1/syn/vhdl/WriteHit 
+Execute       gen_rtl WriteHit -style xilinx -f -lang vlog -o /home/yzou/LRUCache/solution1/syn/verilog/WriteHit 
+Execute       gen_tb_info WriteHit -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit -p /home/yzou/LRUCache/solution1/.autopilot/db 
+Execute       report -model WriteHit -o /home/yzou/LRUCache/solution1/syn/report/WriteHit_csynth.rpt -f 
+Execute       report -model WriteHit -o /home/yzou/LRUCache/solution1/syn/report/WriteHit_csynth.xml -f -x 
+Execute       report -model WriteHit -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.verbose.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -model WriteHit -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ReadMiss' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model ReadMiss -vendor xilinx -mg_file /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'PLRUCache_mux_83_24_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'PLRUCache_mux_83_512_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ReadMiss'.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 128.915 MB.
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ReadMiss -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yzou/LRUCache/solution1/syn/systemc/ReadMiss -synmodules ReadHit WriteHit ReadMiss WriteMiss PLRUCache 
+Execute       gen_rtl ReadMiss -style xilinx -f -lang vhdl -o /home/yzou/LRUCache/solution1/syn/vhdl/ReadMiss 
+Execute       gen_rtl ReadMiss -style xilinx -f -lang vlog -o /home/yzou/LRUCache/solution1/syn/verilog/ReadMiss 
+Execute       gen_tb_info ReadMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss -p /home/yzou/LRUCache/solution1/.autopilot/db 
+Execute       report -model ReadMiss -o /home/yzou/LRUCache/solution1/syn/report/ReadMiss_csynth.rpt -f 
+Execute       report -model ReadMiss -o /home/yzou/LRUCache/solution1/syn/report/ReadMiss_csynth.xml -f -x 
+Execute       report -model ReadMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.verbose.rpt -verbose -f 
+Command       report done; 0.11 sec.
+Execute       db_write -model ReadMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'WriteMiss' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model WriteMiss -vendor xilinx -mg_file /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'PLRUCache_mux_83_24_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'PLRUCache_mux_83_512_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'WriteMiss'.
+INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 132.741 MB.
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       gen_rtl WriteMiss -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yzou/LRUCache/solution1/syn/systemc/WriteMiss -synmodules ReadHit WriteHit ReadMiss WriteMiss PLRUCache 
+Execute       gen_rtl WriteMiss -style xilinx -f -lang vhdl -o /home/yzou/LRUCache/solution1/syn/vhdl/WriteMiss 
+Execute       gen_rtl WriteMiss -style xilinx -f -lang vlog -o /home/yzou/LRUCache/solution1/syn/verilog/WriteMiss 
+Execute       gen_tb_info WriteMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss -p /home/yzou/LRUCache/solution1/.autopilot/db 
+Execute       report -model WriteMiss -o /home/yzou/LRUCache/solution1/syn/report/WriteMiss_csynth.rpt -f 
+Execute       report -model WriteMiss -o /home/yzou/LRUCache/solution1/syn/report/WriteMiss_csynth.xml -f -x 
+Execute       report -model WriteMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.verbose.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -model WriteMiss -o /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'PLRUCache' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model PLRUCache -vendor xilinx -mg_file /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'PLRUCache/dram' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'PLRUCache/i_addr_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'PLRUCache/i_wdata_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'PLRUCache/i_op' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'PLRUCache/dram_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'PLRUCache' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'PLRUCache'.
+Command       create_rtl_model done; 0.13 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 137.811 MB.
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       gen_rtl PLRUCache -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yzou/LRUCache/solution1/syn/systemc/PLRUCache -synmodules ReadHit WriteHit ReadMiss WriteMiss PLRUCache 
+Execute       gen_rtl PLRUCache -istop -style xilinx -f -lang vhdl -o /home/yzou/LRUCache/solution1/syn/vhdl/PLRUCache 
+Command       gen_rtl done; 0.14 sec.
+Execute       gen_rtl PLRUCache -istop -style xilinx -f -lang vlog -o /home/yzou/LRUCache/solution1/syn/verilog/PLRUCache 
+Execute       export_constraint_db -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.constraint.tcl -f -tool general 
+Execute       report -model PLRUCache -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.design.xml -verbose -f -dv 
+Command       report done; 0.27 sec.
+Execute       report -model PLRUCache -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 0.18 sec.
+Execute       gen_tb_info PLRUCache -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache -p /home/yzou/LRUCache/solution1/.autopilot/db 
+Execute       report -model PLRUCache -o /home/yzou/LRUCache/solution1/syn/report/PLRUCache_csynth.rpt -f 
+Execute       report -model PLRUCache -o /home/yzou/LRUCache/solution1/syn/report/PLRUCache_csynth.xml -f -x 
+Execute       report -model PLRUCache -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.verbose.rpt -verbose -f 
+Command       report done; 0.37 sec.
+Execute       db_write -model PLRUCache -o /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.adb -f 
+Command       db_write done; 0.11 sec.
+Execute       sc_get_clocks PLRUCache 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain PLRUCache 
+INFO-FLOW: Model list for RTL component generation: ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO-FLOW: Handling components in module [ReadHit] ... 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+INFO-FLOW: Found component PLRUCache_mux_83_512_2_1.
+INFO-FLOW: Append model PLRUCache_mux_83_512_2_1
+INFO-FLOW: Handling components in module [WriteHit] ... 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+INFO-FLOW: Handling components in module [ReadMiss] ... 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+INFO-FLOW: Found component PLRUCache_mux_83_24_2_1.
+INFO-FLOW: Append model PLRUCache_mux_83_24_2_1
+INFO-FLOW: Handling components in module [WriteMiss] ... 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+INFO-FLOW: Handling components in module [PLRUCache] ... 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+INFO-FLOW: Found component PLRUCache_validArray_V.
+INFO-FLOW: Append model PLRUCache_validArray_V
+INFO-FLOW: Found component PLRUCache_tagArray_V_0.
+INFO-FLOW: Append model PLRUCache_tagArray_V_0
+INFO-FLOW: Found component PLRUCache_dataArray_V_0.
+INFO-FLOW: Append model PLRUCache_dataArray_V_0
+INFO-FLOW: Found component PLRUCache_dram_m_axi.
+INFO-FLOW: Append model PLRUCache_dram_m_axi
+INFO-FLOW: Append model ReadHit
+INFO-FLOW: Append model WriteHit
+INFO-FLOW: Append model ReadMiss
+INFO-FLOW: Append model WriteMiss
+INFO-FLOW: Append model PLRUCache
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: PLRUCache_mux_83_512_2_1 PLRUCache_mux_83_24_2_1 PLRUCache_validArray_V PLRUCache_tagArray_V_0 PLRUCache_dataArray_V_0 PLRUCache_dram_m_axi ReadHit WriteHit ReadMiss WriteMiss PLRUCache
+INFO-FLOW: To file: write model PLRUCache_mux_83_512_2_1
+INFO-FLOW: To file: write model PLRUCache_mux_83_24_2_1
+INFO-FLOW: To file: write model PLRUCache_validArray_V
+INFO-FLOW: To file: write model PLRUCache_tagArray_V_0
+INFO-FLOW: To file: write model PLRUCache_dataArray_V_0
+INFO-FLOW: To file: write model PLRUCache_dram_m_axi
+INFO-FLOW: To file: write model ReadHit
+INFO-FLOW: To file: write model WriteHit
+INFO-FLOW: To file: write model ReadMiss
+INFO-FLOW: To file: write model WriteMiss
+INFO-FLOW: To file: write model PLRUCache
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/yzou/LRUCache/solution1
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.12 sec.
+Command       ap_source done; 0.12 sec.
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+INFO: [RTMG 210-288] Generating pipelined multiplexer : 'PLRUCache_mux_83_512_2_1'
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+INFO: [RTMG 210-288] Generating pipelined multiplexer : 'PLRUCache_mux_83_24_2_1'
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'PLRUCache_validArray_V_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'PLRUCache_tagArray_V_0_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'PLRUCache_dataArray_V_0_ram (RAM)' using block RAMs with power-on initialization.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/yzou/LRUCache/solution1
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.11 sec.
+Command       ap_source done; 0.11 sec.
+Execute       source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute         source /opt/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=PLRUCache xml_exists=0
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.rtl_wrap.cfg.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteHit.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/ReadMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/WriteMiss.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.compgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.constraint.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=6
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=11 #gSsdmPorts=12
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.tbgen.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/PLRUCache.constraint.tcl 
+Execute       sc_get_clocks PLRUCache 
+Execute       source /home/yzou/LRUCache/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: /home/yzou/LRUCache/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 633.859 ; gain = 192.000 ; free physical = 310 ; free virtual = 28976
+INFO: [SYSC 207-301] Generating SystemC RTL for PLRUCache.
+INFO: [VHDL 208-304] Generating VHDL RTL for PLRUCache.
+INFO: [VLOG 209-307] Generating Verilog RTL for PLRUCache.
+Command     autosyn done; 5.78 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 21.9 sec.
+Command ap_source done; 22.56 sec.
+Execute cleanup_all 

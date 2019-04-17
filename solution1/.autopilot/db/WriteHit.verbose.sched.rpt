@@ -1,0 +1,243 @@
+
+
+================================================================
+== Vivado HLS Report for 'WriteHit'
+================================================================
+* Date:           Wed Apr 17 12:02:45 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        LRUCache
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k325tffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     4.199|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|    1|    1|    1|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.19>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%tag_7_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_7_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 3 'read' 'tag_7_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%tag_6_V_read61 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_6_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 4 'read' 'tag_6_V_read61' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tag_5_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_5_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 5 'read' 'tag_5_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tag_4_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_4_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 6 'read' 'tag_4_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tag_3_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_3_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 7 'read' 'tag_3_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tag_2_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_2_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 8 'read' 'tag_2_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tag_1_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_1_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 9 'read' 'tag_1_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tag_0_V_read_2 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_0_V_read)" [LRUCache/src/cache.cpp:149]   --->   Operation 10 'read' 'tag_0_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%valid_V_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %valid_V)" [LRUCache/src/cache.cpp:149]   --->   Operation 11 'read' 'valid_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_addr_V_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %i_addr_V)" [LRUCache/src/cache.cpp:149]   --->   Operation 12 'read' 'i_addr_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indexReg_V = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %i_addr_V_read, i32 7, i32 0)" [LRUCache/src/cache.cpp:156]   --->   Operation 13 'partselect' 'indexReg_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tagReg_V = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %i_addr_V_read, i32 31, i32 8)" [LRUCache/src/cache.cpp:157]   --->   Operation 14 'partselect' 'tagReg_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp = zext i8 %indexReg_V to i64" [LRUCache/src/cache.cpp:160]   --->   Operation 15 'zext' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%mruArray_V_1_addr = getelementptr [256 x i8]* %mruArray_V_2, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:160]   --->   Operation 16 'getelementptr' 'mruArray_V_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (2.26ns)   --->   "%tempMru_V = load i8* %mruArray_V_1_addr, align 1" [LRUCache/src/cache.cpp:160]   --->   Operation 17 'load' 'tempMru_V' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_24 = trunc i8 %valid_V_read to i1" [LRUCache/src/cache.cpp:166]   --->   Operation 18 'trunc' 'tmp_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.28ns)   --->   "%tmp_1 = icmp eq i24 %tagReg_V, %tag_0_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 19 'icmp' 'tmp_1' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.47ns)   --->   "%or_cond = and i1 %tmp_24, %tmp_1" [LRUCache/src/cache.cpp:166]   --->   Operation 20 'and' 'or_cond' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_25 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 1)" [LRUCache/src/cache.cpp:166]   --->   Operation 21 'bitselect' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.28ns)   --->   "%tmp_10_1 = icmp eq i24 %tagReg_V, %tag_1_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 22 'icmp' 'tmp_10_1' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.47ns)   --->   "%or_cond8 = and i1 %tmp_25, %tmp_10_1" [LRUCache/src/cache.cpp:166]   --->   Operation 23 'and' 'or_cond8' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_26 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 2)" [LRUCache/src/cache.cpp:166]   --->   Operation 24 'bitselect' 'tmp_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.28ns)   --->   "%tmp_10_2 = icmp eq i24 %tagReg_V, %tag_2_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 25 'icmp' 'tmp_10_2' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.47ns)   --->   "%or_cond9 = and i1 %tmp_26, %tmp_10_2" [LRUCache/src/cache.cpp:166]   --->   Operation 26 'and' 'or_cond9' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_27 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 3)" [LRUCache/src/cache.cpp:166]   --->   Operation 27 'bitselect' 'tmp_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (1.28ns)   --->   "%tmp_10_3 = icmp eq i24 %tagReg_V, %tag_3_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 28 'icmp' 'tmp_10_3' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.47ns)   --->   "%or_cond1 = and i1 %tmp_27, %tmp_10_3" [LRUCache/src/cache.cpp:166]   --->   Operation 29 'and' 'or_cond1' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_28 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 4)" [LRUCache/src/cache.cpp:166]   --->   Operation 30 'bitselect' 'tmp_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (1.28ns)   --->   "%tmp_10_4 = icmp eq i24 %tagReg_V, %tag_4_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 31 'icmp' 'tmp_10_4' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.47ns)   --->   "%or_cond2 = and i1 %tmp_28, %tmp_10_4" [LRUCache/src/cache.cpp:166]   --->   Operation 32 'and' 'or_cond2' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_29 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 5)" [LRUCache/src/cache.cpp:166]   --->   Operation 33 'bitselect' 'tmp_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (1.28ns)   --->   "%tmp_10_5 = icmp eq i24 %tagReg_V, %tag_5_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 34 'icmp' 'tmp_10_5' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (0.47ns)   --->   "%or_cond3 = and i1 %tmp_29, %tmp_10_5" [LRUCache/src/cache.cpp:166]   --->   Operation 35 'and' 'or_cond3' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp14)   --->   "%tmp_30 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 6)" [LRUCache/src/cache.cpp:166]   --->   Operation 36 'bitselect' 'tmp_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (1.28ns)   --->   "%tmp_10_6 = icmp eq i24 %tagReg_V, %tag_6_V_read61" [LRUCache/src/cache.cpp:166]   --->   Operation 37 'icmp' 'tmp_10_6' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_31 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 7)" [LRUCache/src/cache.cpp:166]   --->   Operation 38 'bitselect' 'tmp_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (1.28ns)   --->   "%tmp_10_7 = icmp eq i24 %tagReg_V, %tag_7_V_read_2" [LRUCache/src/cache.cpp:166]   --->   Operation 39 'icmp' 'tmp_10_7' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%or_cond5 = and i1 %tmp_31, %tmp_10_7" [LRUCache/src/cache.cpp:166]   --->   Operation 40 'and' 'or_cond5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%p_cast = select i1 %or_cond, i4 0, i4 7" [LRUCache/src/cache.cpp:166]   --->   Operation 41 'select' 'p_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_4 = or i1 %or_cond, %or_cond5" [LRUCache/src/cache.cpp:166]   --->   Operation 42 'or' 'tmp_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (0.51ns) (out node of the LUT)   --->   "%sel_tmp = select i1 %tmp_4, i4 %p_cast, i4 -8" [LRUCache/src/cache.cpp:166]   --->   Operation 43 'select' 'sel_tmp' <Predicate = true> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp8)   --->   "%sel_tmp1 = xor i1 %or_cond, true" [LRUCache/src/cache.cpp:166]   --->   Operation 44 'xor' 'sel_tmp1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp8)   --->   "%sel_tmp2 = and i1 %or_cond8, %sel_tmp1" [LRUCache/src/cache.cpp:166]   --->   Operation 45 'and' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 46 [1/1] (0.47ns)   --->   "%sel_tmp6_demorgan = or i1 %or_cond, %or_cond8" [LRUCache/src/cache.cpp:166]   --->   Operation 46 'or' 'sel_tmp6_demorgan' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7)   --->   "%sel_tmp6 = xor i1 %sel_tmp6_demorgan, true" [LRUCache/src/cache.cpp:166]   --->   Operation 47 'xor' 'sel_tmp6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (0.47ns) (out node of the LUT)   --->   "%sel_tmp7 = and i1 %or_cond9, %sel_tmp6" [LRUCache/src/cache.cpp:166]   --->   Operation 48 'and' 'sel_tmp7' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp8)   --->   "%sel_tmp3_cast = select i1 %sel_tmp7, i4 2, i4 1" [LRUCache/src/cache.cpp:166]   --->   Operation 49 'select' 'sel_tmp3_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp8)   --->   "%tmp_5 = or i1 %sel_tmp7, %sel_tmp2" [LRUCache/src/cache.cpp:166]   --->   Operation 50 'or' 'tmp_5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.51ns) (out node of the LUT)   --->   "%sel_tmp8 = select i1 %tmp_5, i4 %sel_tmp3_cast, i4 %sel_tmp" [LRUCache/src/cache.cpp:166]   --->   Operation 51 'select' 'sel_tmp8' <Predicate = true> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.47ns)   --->   "%sel_tmp13_demorgan = or i1 %sel_tmp6_demorgan, %or_cond9" [LRUCache/src/cache.cpp:166]   --->   Operation 52 'or' 'sel_tmp13_demorgan' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp10)   --->   "%sel_tmp4 = xor i1 %sel_tmp13_demorgan, true" [LRUCache/src/cache.cpp:166]   --->   Operation 53 'xor' 'sel_tmp4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp10)   --->   "%sel_tmp5 = and i1 %or_cond1, %sel_tmp4" [LRUCache/src/cache.cpp:166]   --->   Operation 54 'and' 'sel_tmp5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.47ns)   --->   "%sel_tmp22_demorgan = or i1 %sel_tmp13_demorgan, %or_cond1" [LRUCache/src/cache.cpp:166]   --->   Operation 55 'or' 'sel_tmp22_demorgan' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp3)   --->   "%sel_tmp9 = xor i1 %sel_tmp22_demorgan, true" [LRUCache/src/cache.cpp:166]   --->   Operation 56 'xor' 'sel_tmp9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.47ns) (out node of the LUT)   --->   "%sel_tmp3 = and i1 %or_cond2, %sel_tmp9" [LRUCache/src/cache.cpp:166]   --->   Operation 57 'and' 'sel_tmp3' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp10)   --->   "%sel_tmp11_cast = select i1 %sel_tmp3, i4 4, i4 3" [LRUCache/src/cache.cpp:166]   --->   Operation 58 'select' 'sel_tmp11_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp10)   --->   "%tmp_6 = or i1 %sel_tmp3, %sel_tmp5" [LRUCache/src/cache.cpp:166]   --->   Operation 59 'or' 'tmp_6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.51ns) (out node of the LUT)   --->   "%sel_tmp10 = select i1 %tmp_6, i4 %sel_tmp11_cast, i4 %sel_tmp8" [LRUCache/src/cache.cpp:166]   --->   Operation 60 'select' 'sel_tmp10' <Predicate = true> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (0.47ns)   --->   "%sel_tmp33_demorgan = or i1 %sel_tmp22_demorgan, %or_cond2" [LRUCache/src/cache.cpp:166]   --->   Operation 61 'or' 'sel_tmp33_demorgan' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp14)   --->   "%sel_tmp46_demorgan = or i1 %sel_tmp33_demorgan, %or_cond3" [LRUCache/src/cache.cpp:166]   --->   Operation 62 'or' 'sel_tmp46_demorgan' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp14)   --->   "%sel_tmp13 = xor i1 %sel_tmp46_demorgan, true" [LRUCache/src/cache.cpp:166]   --->   Operation 63 'xor' 'sel_tmp13' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp14)   --->   "%tmp7 = and i1 %tmp_10_6, %sel_tmp13" [LRUCache/src/cache.cpp:166]   --->   Operation 64 'and' 'tmp7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 65 [1/1] (0.47ns) (out node of the LUT)   --->   "%sel_tmp14 = and i1 %tmp7, %tmp_30" [LRUCache/src/cache.cpp:166]   --->   Operation 65 'and' 'sel_tmp14' <Predicate = true> <Delay = 0.47> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 3.21>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%i_wdata_V_read = call i512 @_ssdm_op_Read.ap_auto.i512(i512 %i_wdata_V)" [LRUCache/src/cache.cpp:149]   --->   Operation 66 'read' 'i_wdata_V_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/2] (2.26ns)   --->   "%tempMru_V = load i8* %mruArray_V_1_addr, align 1" [LRUCache/src/cache.cpp:160]   --->   Operation 67 'load' 'tempMru_V' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node evictWay_lcssa)   --->   "%sel_tmp11 = xor i1 %sel_tmp33_demorgan, true" [LRUCache/src/cache.cpp:166]   --->   Operation 68 'xor' 'sel_tmp11' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (0.00ns) (grouped into LUT with out node evictWay_lcssa)   --->   "%sel_tmp12 = and i1 %or_cond3, %sel_tmp11" [LRUCache/src/cache.cpp:166]   --->   Operation 69 'and' 'sel_tmp12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node evictWay_lcssa)   --->   "%sel_tmp17_cast = select i1 %sel_tmp14, i4 6, i4 5" [LRUCache/src/cache.cpp:166]   --->   Operation 70 'select' 'sel_tmp17_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node evictWay_lcssa)   --->   "%tmp_8 = or i1 %sel_tmp14, %sel_tmp12" [LRUCache/src/cache.cpp:166]   --->   Operation 71 'or' 'tmp_8' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.51ns) (out node of the LUT)   --->   "%evictWay_lcssa = select i1 %tmp_8, i4 %sel_tmp17_cast, i4 %sel_tmp10" [LRUCache/src/cache.cpp:166]   --->   Operation 72 'select' 'evictWay_lcssa' <Predicate = true> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%evictWay_lcssa_cast = zext i4 %evictWay_lcssa to i32" [LRUCache/src/cache.cpp:166]   --->   Operation 73 'zext' 'evictWay_lcssa_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_32 = trunc i4 %evictWay_lcssa to i3" [LRUCache/src/cache.cpp:175]   --->   Operation 74 'trunc' 'tmp_32' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%dataArray_0_V_addr = getelementptr [256 x i512]* %dataArray_0_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 75 'getelementptr' 'dataArray_0_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%dataArray_1_V_addr = getelementptr [256 x i512]* %dataArray_1_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 76 'getelementptr' 'dataArray_1_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%dataArray_2_V_addr = getelementptr [256 x i512]* %dataArray_2_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 77 'getelementptr' 'dataArray_2_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%dataArray_3_V_addr = getelementptr [256 x i512]* %dataArray_3_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 78 'getelementptr' 'dataArray_3_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%dataArray_4_V_addr = getelementptr [256 x i512]* %dataArray_4_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 79 'getelementptr' 'dataArray_4_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%dataArray_5_V_addr = getelementptr [256 x i512]* %dataArray_5_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 80 'getelementptr' 'dataArray_5_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%dataArray_6_V_addr = getelementptr [256 x i512]* %dataArray_6_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 81 'getelementptr' 'dataArray_6_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%dataArray_7_V_addr = getelementptr [256 x i512]* %dataArray_7_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:175]   --->   Operation 82 'getelementptr' 'dataArray_7_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.88ns)   --->   "switch i3 %tmp_32, label %branch7 [
+    i3 0, label %branch0
+    i3 1, label %branch1
+    i3 2, label %branch2
+    i3 3, label %branch3
+    i3 -4, label %branch4
+    i3 -3, label %branch5
+    i3 -2, label %branch6
+  ]" [LRUCache/src/cache.cpp:175]   --->   Operation 83 'switch' <Predicate = true> <Delay = 0.88>
+ST_2 : Operation 84 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_6_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 84 'store' <Predicate = (tmp_32 == 6)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 85 'br' <Predicate = (tmp_32 == 6)> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_5_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 86 'store' <Predicate = (tmp_32 == 5)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 87 'br' <Predicate = (tmp_32 == 5)> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_4_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 88 'store' <Predicate = (tmp_32 == 4)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 89 'br' <Predicate = (tmp_32 == 4)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_3_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 90 'store' <Predicate = (tmp_32 == 3)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 91 'br' <Predicate = (tmp_32 == 3)> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_2_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 92 'store' <Predicate = (tmp_32 == 2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 93 'br' <Predicate = (tmp_32 == 2)> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_1_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 94 'store' <Predicate = (tmp_32 == 1)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 95 'br' <Predicate = (tmp_32 == 1)> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_0_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 96 'store' <Predicate = (tmp_32 == 0)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 97 'br' <Predicate = (tmp_32 == 0)> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_7_V_addr, align 64" [LRUCache/src/cache.cpp:175]   --->   Operation 98 'store' <Predicate = (tmp_32 == 7)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "br label %.loopexit94" [LRUCache/src/cache.cpp:175]   --->   Operation 99 'br' <Predicate = (tmp_32 == 7)> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%p_Result_s = call i8 @_ssdm_op_BitSet.i8.i8.i32.i8(i8 %tempMru_V, i32 %evictWay_lcssa_cast, i8 1)" [LRUCache/src/cache.cpp:178]   --->   Operation 100 'bitset' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.94ns)   --->   "%tmp_s = icmp eq i8 %p_Result_s, -1" [LRUCache/src/cache.cpp:181]   --->   Operation 101 'icmp' 'tmp_s' <Predicate = true> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %.preheader.0, label %.loopexit._crit_edge" [LRUCache/src/cache.cpp:181]   --->   Operation 102 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 103 [1/1] (0.94ns)   --->   "%val_assign = icmp eq i8 %indexReg_V, 0" [LRUCache/src/cache.cpp:184]   --->   Operation 103 'icmp' 'val_assign' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (0.94ns)   --->   "%val_assign_1 = icmp eq i8 %indexReg_V, 1" [LRUCache/src/cache.cpp:184]   --->   Operation 104 'icmp' 'val_assign_1' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 105 [1/1] (0.94ns)   --->   "%val_assign_2 = icmp eq i8 %indexReg_V, 2" [LRUCache/src/cache.cpp:184]   --->   Operation 105 'icmp' 'val_assign_2' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 106 [1/1] (0.94ns)   --->   "%val_assign_3 = icmp eq i8 %indexReg_V, 3" [LRUCache/src/cache.cpp:184]   --->   Operation 106 'icmp' 'val_assign_3' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (0.94ns)   --->   "%val_assign_4 = icmp eq i8 %indexReg_V, 4" [LRUCache/src/cache.cpp:184]   --->   Operation 107 'icmp' 'val_assign_4' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 108 [1/1] (0.94ns)   --->   "%val_assign_5 = icmp eq i8 %indexReg_V, 5" [LRUCache/src/cache.cpp:184]   --->   Operation 108 'icmp' 'val_assign_5' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 109 [1/1] (0.94ns)   --->   "%val_assign_6 = icmp eq i8 %indexReg_V, 6" [LRUCache/src/cache.cpp:184]   --->   Operation 109 'icmp' 'val_assign_6' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 110 [1/1] (0.94ns)   --->   "%val_assign_7 = icmp eq i8 %indexReg_V, 7" [LRUCache/src/cache.cpp:184]   --->   Operation 110 'icmp' 'val_assign_7' <Predicate = (tmp_s)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 111 [1/1] (0.00ns)   --->   "%p_Result_12_7 = call i8 @_ssdm_op_BitConcatenate.i8.i1.i1.i1.i1.i1.i1.i1.i1(i1 %val_assign_7, i1 %val_assign_6, i1 %val_assign_5, i1 %val_assign_4, i1 %val_assign_3, i1 %val_assign_2, i1 %val_assign_1, i1 %val_assign)" [LRUCache/src/cache.cpp:184]   --->   Operation 111 'bitconcatenate' 'p_Result_12_7' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_2 : Operation 112 [1/1] (2.26ns)   --->   "store i8 %p_Result_12_7, i8* %mruArray_V_1_addr, align 1" [LRUCache/src/cache.cpp:186]   --->   Operation 112 'store' <Predicate = (tmp_s)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 113 [1/1] (0.00ns)   --->   "br label %.loopexit._crit_edge" [LRUCache/src/cache.cpp:187]   --->   Operation 113 'br' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "ret void" [LRUCache/src/cache.cpp:188]   --->   Operation 114 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 4.2ns
+The critical path consists of the following:
+	wire read on port 'tag_1_V_read' (LRUCache/src/cache.cpp:149) [27]  (0 ns)
+	'icmp' operation ('tmp_10_1', LRUCache/src/cache.cpp:166) [41]  (1.29 ns)
+	'and' operation ('or_cond8', LRUCache/src/cache.cpp:166) [42]  (0.479 ns)
+	'or' operation ('sel_tmp6_demorgan', LRUCache/src/cache.cpp:166) [65]  (0.479 ns)
+	'or' operation ('sel_tmp13_demorgan', LRUCache/src/cache.cpp:166) [71]  (0.479 ns)
+	'or' operation ('sel_tmp22_demorgan', LRUCache/src/cache.cpp:166) [74]  (0.479 ns)
+	'xor' operation ('sel_tmp9', LRUCache/src/cache.cpp:166) [75]  (0 ns)
+	'and' operation ('sel_tmp3', LRUCache/src/cache.cpp:166) [76]  (0.479 ns)
+	'select' operation ('sel_tmp11_cast', LRUCache/src/cache.cpp:166) [77]  (0 ns)
+	'select' operation ('sel_tmp10', LRUCache/src/cache.cpp:166) [79]  (0.517 ns)
+
+ <State 2>: 3.21ns
+The critical path consists of the following:
+	'load' operation ('tempMru.V', LRUCache/src/cache.cpp:160) on array 'mruArray_V_2' [36]  (2.27 ns)
+	'icmp' operation ('tmp_s', LRUCache/src/cache.cpp:181) [127]  (0.947 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

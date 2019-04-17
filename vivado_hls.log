@@ -1,0 +1,55 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vivado/2018.3/scripts/vivado_hls/hls.tcl -notrace
+
+[0;1mSYNTAX[0m
+    [0;1mvivado_hls[0m  [OPTIONS]
+
+[0;1mDESCRIPTION[0m
+    Vivado_hls opens in Graphical User Interface (GUI) mode by default. With the appropriate options, shown below, Vivado_hls can be invoked in Command Line Interface (CLI) mode or batch mode.
+
+     - GUI mode opens a window with a menu-driven environment and wizards to drive the tool.
+
+     - CLI mode starts a shell with a prompt to enter commands interactively.
+
+     - Batch mode is when the commands for the CLI are supplied in a file.
+
+     Vivado_hls executes a Tcl based initialization script from ${HOME}/.vivado_hlsrc when it starts, if the file exists.
+
+
+[0;1mOPTIONS[0m
+    [0;1m-h[elp][0m
+        Prints a list of all command options and their defaults. Vivado_hls is not invoked.
+
+    [0;1m-version[0m
+        Displays the current Vivado_hls version number. Vivado_hls is not invoked.
+
+    [0;1m-s[ystem][0m
+        Displays the name of the operating system Vivado_hls is running on. Vivado_hls is not invoked.
+
+    [0;1m-r[oot_dir][0m
+        Displays the name of the directory where Vivado_hls is installed. Vivado_hls is not invoked.
+
+    [0;1m-l[0m    <file_name>
+        Defines the name of the vivado_hls log file as 'file_name'. By default, Vivado_hls creates a log file 'vivado_hls.log' in the current work directory.
+
+        Default: [0;4mvivado_hls.log[0m. 
+
+    [0;1m-nosplash[0m
+        Disables the splash screen displayed when starting in GUI mode.
+
+    [0;1m-p[0m    <project_name>
+        Open existing project 'project_name' in GUI mode.
+
+    [0;1m-i[0m
+        This option invokes Vivado_hls in CLI mode (the GUI does not open): Vivado_hls offers a command prompt, ready to receive any Vivado_hls command.
+
+    [0;1m-f[0m    <file_name>
+        Sources a file 'file_name' of Vivado_hls commands and executes the CLI in batch mode.
+
+
+INFO: [Common 17-206] Exiting vivado_hls at Wed Apr 17 11:59:31 2019...

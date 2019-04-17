@@ -1,0 +1,372 @@
+
+
+================================================================
+== Vivado HLS Report for 'WriteMiss'
+================================================================
+* Date:           Wed Apr 17 12:02:46 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        LRUCache
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k325tffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     4.375|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    3|   10|    3|   10|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (isEvict_2)
+	11  / (!isEvict_2)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.26>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_addr_V_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %i_addr_V)"   --->   Operation 12 'read' 'i_addr_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indexReg_V = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %i_addr_V_read, i32 7, i32 0)" [LRUCache/src/cache.cpp:90]   --->   Operation 13 'partselect' 'indexReg_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tagReg_V = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %i_addr_V_read, i32 31, i32 8)" [LRUCache/src/cache.cpp:91]   --->   Operation 14 'partselect' 'tagReg_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp = zext i8 %indexReg_V to i64" [LRUCache/src/cache.cpp:94]   --->   Operation 15 'zext' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%mruArray_V_addr = getelementptr [256 x i8]* @mruArray_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:94]   --->   Operation 16 'getelementptr' 'mruArray_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (2.26ns)   --->   "%tempMru_V = load i8* %mruArray_V_addr, align 1" [LRUCache/src/cache.cpp:94]   --->   Operation 17 'load' 'tempMru_V' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+
+State 2 <SV = 1> <Delay = 3.38>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tag_7_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_7_V_read)"   --->   Operation 18 'read' 'tag_7_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tag_6_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_6_V_read)"   --->   Operation 19 'read' 'tag_6_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tag_5_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_5_V_read)"   --->   Operation 20 'read' 'tag_5_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tag_4_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_4_V_read)"   --->   Operation 21 'read' 'tag_4_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tag_3_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_3_V_read)"   --->   Operation 22 'read' 'tag_3_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tag_2_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_2_V_read)"   --->   Operation 23 'read' 'tag_2_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%tag_1_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_1_V_read)"   --->   Operation 24 'read' 'tag_1_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%tag_0_V_read_1 = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %tag_0_V_read)"   --->   Operation 25 'read' 'tag_0_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%valid_V_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %valid_V)"   --->   Operation 26 'read' 'valid_V_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%dram_V_offset_read = call i26 @_ssdm_op_Read.ap_auto.i26(i26 %dram_V_offset)"   --->   Operation 27 'read' 'dram_V_offset_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%i_wdata_V_read = call i512 @_ssdm_op_Read.ap_auto.i512(i512 %i_wdata_V)"   --->   Operation 28 'read' 'i_wdata_V_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i512* %dram_V, [6 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 100, [5 x i8]* @p_str12, [7 x i8]* @p_str13, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 29 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/2] (2.26ns)   --->   "%tempMru_V = load i8* %mruArray_V_addr, align 1" [LRUCache/src/cache.cpp:94]   --->   Operation 30 'load' 'tempMru_V' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_2 : Operation 31 [1/1] (0.94ns)   --->   "%tmp_1 = icmp eq i8 %valid_V_read, -1" [LRUCache/src/cache.cpp:98]   --->   Operation 31 'icmp' 'tmp_1' <Predicate = true> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %.preheader291.0, label %.preheader292.0" [LRUCache/src/cache.cpp:98]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i8 %valid_V_read to i1" [LRUCache/src/cache.cpp:101]   --->   Operation 33 'trunc' 'tmp_4' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.12ns)   --->   "br i1 %tmp_4, label %.preheader292.1, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 34 'br' <Predicate = (!tmp_1)> <Delay = 1.12>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 1)" [LRUCache/src/cache.cpp:101]   --->   Operation 35 'bitselect' 'tmp_7' <Predicate = (!tmp_1 & tmp_4)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (1.12ns)   --->   "br i1 %tmp_7, label %.preheader292.2, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 36 'br' <Predicate = (!tmp_1 & tmp_4)> <Delay = 1.12>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_9 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 2)" [LRUCache/src/cache.cpp:101]   --->   Operation 37 'bitselect' 'tmp_9' <Predicate = (!tmp_1 & tmp_4 & tmp_7)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.12ns)   --->   "br i1 %tmp_9, label %.preheader292.3, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 38 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7)> <Delay = 1.12>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 3)" [LRUCache/src/cache.cpp:101]   --->   Operation 39 'bitselect' 'tmp_11' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (1.12ns)   --->   "br i1 %tmp_11, label %.preheader292.4, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 40 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9)> <Delay = 1.12>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 4)" [LRUCache/src/cache.cpp:101]   --->   Operation 41 'bitselect' 'tmp_13' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (1.12ns)   --->   "br i1 %tmp_13, label %.preheader292.5, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 42 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11)> <Delay = 1.12>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_15 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 5)" [LRUCache/src/cache.cpp:101]   --->   Operation 43 'bitselect' 'tmp_15' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (1.12ns)   --->   "br i1 %tmp_15, label %.preheader292.6, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 44 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13)> <Delay = 1.12>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_17 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 6)" [LRUCache/src/cache.cpp:101]   --->   Operation 45 'bitselect' 'tmp_17' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13 & tmp_15)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (1.12ns)   --->   "br i1 %tmp_17, label %.preheader292.7, label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 46 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13 & tmp_15)> <Delay = 1.12>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_19 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %valid_V_read, i32 7)" [LRUCache/src/cache.cpp:101]   --->   Operation 47 'bitselect' 'tmp_19' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13 & tmp_15 & tmp_17)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.51ns)   --->   "%p_3 = select i1 %tmp_19, i4 -8, i4 7" [LRUCache/src/cache.cpp:101]   --->   Operation 48 'select' 'p_3' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13 & tmp_15 & tmp_17)> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (1.12ns)   --->   "br label %.loopexit286" [LRUCache/src/cache.cpp:101]   --->   Operation 49 'br' <Predicate = (!tmp_1 & tmp_4 & tmp_7 & tmp_9 & tmp_11 & tmp_13 & tmp_15 & tmp_17)> <Delay = 1.12>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_2 = trunc i8 %tempMru_V to i1" [LRUCache/src/cache.cpp:110]   --->   Operation 50 'trunc' 'tmp_2' <Predicate = (tmp_1)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (1.12ns)   --->   "br i1 %tmp_2, label %.preheader291.1, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 51 'br' <Predicate = (tmp_1)> <Delay = 1.12>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_5 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 1)" [LRUCache/src/cache.cpp:110]   --->   Operation 52 'bitselect' 'tmp_5' <Predicate = (tmp_1 & tmp_2)> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (1.12ns)   --->   "br i1 %tmp_5, label %.preheader291.2, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 53 'br' <Predicate = (tmp_1 & tmp_2)> <Delay = 1.12>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 2)" [LRUCache/src/cache.cpp:110]   --->   Operation 54 'bitselect' 'tmp_8' <Predicate = (tmp_1 & tmp_2 & tmp_5)> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (1.12ns)   --->   "br i1 %tmp_8, label %.preheader291.3, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 55 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5)> <Delay = 1.12>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 3)" [LRUCache/src/cache.cpp:110]   --->   Operation 56 'bitselect' 'tmp_10' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (1.12ns)   --->   "br i1 %tmp_10, label %.preheader291.4, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 57 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8)> <Delay = 1.12>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 4)" [LRUCache/src/cache.cpp:110]   --->   Operation 58 'bitselect' 'tmp_12' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10)> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (1.12ns)   --->   "br i1 %tmp_12, label %.preheader291.5, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 59 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10)> <Delay = 1.12>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 5)" [LRUCache/src/cache.cpp:110]   --->   Operation 60 'bitselect' 'tmp_14' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12)> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (1.12ns)   --->   "br i1 %tmp_14, label %.preheader291.6, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 61 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12)> <Delay = 1.12>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 6)" [LRUCache/src/cache.cpp:110]   --->   Operation 62 'bitselect' 'tmp_16' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12 & tmp_14)> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (1.12ns)   --->   "br i1 %tmp_16, label %.preheader291.7, label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 63 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12 & tmp_14)> <Delay = 1.12>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_18 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %tempMru_V, i32 7)" [LRUCache/src/cache.cpp:110]   --->   Operation 64 'bitselect' 'tmp_18' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12 & tmp_14 & tmp_16)> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.51ns)   --->   "%p_s = select i1 %tmp_18, i4 -8, i4 7" [LRUCache/src/cache.cpp:110]   --->   Operation 65 'select' 'p_s' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12 & tmp_14 & tmp_16)> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 66 [1/1] (1.12ns)   --->   "br label %.loopexit286" [LRUCache/src/cache.cpp:110]   --->   Operation 66 'br' <Predicate = (tmp_1 & tmp_2 & tmp_5 & tmp_8 & tmp_10 & tmp_12 & tmp_14 & tmp_16)> <Delay = 1.12>
+
+State 3 <SV = 2> <Delay = 2.26>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%tempValid_V_1 = phi i8 [ -1, %.preheader291.6 ], [ -1, %.preheader291.5 ], [ -1, %.preheader291.4 ], [ -1, %.preheader291.3 ], [ -1, %.preheader291.2 ], [ -1, %.preheader291.1 ], [ -1, %.preheader291.0 ], [ %valid_V_read, %.preheader292.6 ], [ %valid_V_read, %.preheader292.5 ], [ %valid_V_read, %.preheader292.4 ], [ %valid_V_read, %.preheader292.3 ], [ %valid_V_read, %.preheader292.2 ], [ %valid_V_read, %.preheader292.1 ], [ %valid_V_read, %.preheader292.0 ], [ -1, %.preheader291.7 ], [ %valid_V_read, %.preheader292.7 ]"   --->   Operation 67 'phi' 'tempValid_V_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%Hi_assign = phi i4 [ 6, %.preheader291.6 ], [ 5, %.preheader291.5 ], [ 4, %.preheader291.4 ], [ 3, %.preheader291.3 ], [ 2, %.preheader291.2 ], [ 1, %.preheader291.1 ], [ 0, %.preheader291.0 ], [ 6, %.preheader292.6 ], [ 5, %.preheader292.5 ], [ 4, %.preheader292.4 ], [ 3, %.preheader292.3 ], [ 2, %.preheader292.2 ], [ 1, %.preheader292.1 ], [ 0, %.preheader292.0 ], [ %p_s, %.preheader291.7 ], [ %p_3, %.preheader292.7 ]" [LRUCache/src/cache.cpp:110]   --->   Operation 68 'phi' 'Hi_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%isEvict_2 = phi i1 [ true, %.preheader291.6 ], [ true, %.preheader291.5 ], [ true, %.preheader291.4 ], [ true, %.preheader291.3 ], [ true, %.preheader291.2 ], [ true, %.preheader291.1 ], [ true, %.preheader291.0 ], [ false, %.preheader292.6 ], [ false, %.preheader292.5 ], [ false, %.preheader292.4 ], [ false, %.preheader292.3 ], [ false, %.preheader292.2 ], [ false, %.preheader292.1 ], [ false, %.preheader292.0 ], [ true, %.preheader291.7 ], [ false, %.preheader292.7 ]"   --->   Operation 69 'phi' 'isEvict_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%Hi_assign_cast = zext i4 %Hi_assign to i32" [LRUCache/src/cache.cpp:119]   --->   Operation 70 'zext' 'Hi_assign_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "br i1 %isEvict_2, label %1, label %.loopexit286._crit_edge" [LRUCache/src/cache.cpp:119]   --->   Operation 71 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_20 = trunc i4 %Hi_assign to i3" [LRUCache/src/cache.cpp:120]   --->   Operation 72 'trunc' 'tmp_20' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 73 [2/2] (0.81ns)   --->   "%v1_V = call i24 @_ssdm_op_Mux.ap_auto.8i24.i3(i24 %tag_0_V_read_1, i24 %tag_1_V_read_1, i24 %tag_2_V_read_1, i24 %tag_3_V_read_1, i24 %tag_4_V_read_1, i24 %tag_5_V_read_1, i24 %tag_6_V_read_1, i24 %tag_7_V_read_1, i3 %tmp_20)" [LRUCache/src/cache.cpp:120]   --->   Operation 73 'mux' 'v1_V' <Predicate = (isEvict_2)> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%dataArray_V_0_addr_1 = getelementptr [256 x i512]* @dataArray_V_0, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 74 'getelementptr' 'dataArray_V_0_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 75 [2/2] (2.26ns)   --->   "%dataArray_V_0_load = load i512* %dataArray_V_0_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 75 'load' 'dataArray_V_0_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%dataArray_V_1_addr_1 = getelementptr [256 x i512]* @dataArray_V_1, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 76 'getelementptr' 'dataArray_V_1_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 77 [2/2] (2.26ns)   --->   "%dataArray_V_1_load = load i512* %dataArray_V_1_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 77 'load' 'dataArray_V_1_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%dataArray_V_2_addr_1 = getelementptr [256 x i512]* @dataArray_V_2, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 78 'getelementptr' 'dataArray_V_2_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 79 [2/2] (2.26ns)   --->   "%dataArray_V_2_load = load i512* %dataArray_V_2_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 79 'load' 'dataArray_V_2_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%dataArray_V_3_addr_1 = getelementptr [256 x i512]* @dataArray_V_3, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 80 'getelementptr' 'dataArray_V_3_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 81 [2/2] (2.26ns)   --->   "%dataArray_V_3_load = load i512* %dataArray_V_3_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 81 'load' 'dataArray_V_3_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%dataArray_V_4_addr_1 = getelementptr [256 x i512]* @dataArray_V_4, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 82 'getelementptr' 'dataArray_V_4_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 83 [2/2] (2.26ns)   --->   "%dataArray_V_4_load = load i512* %dataArray_V_4_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 83 'load' 'dataArray_V_4_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%dataArray_V_5_addr_1 = getelementptr [256 x i512]* @dataArray_V_5, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 84 'getelementptr' 'dataArray_V_5_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 85 [2/2] (2.26ns)   --->   "%dataArray_V_5_load = load i512* %dataArray_V_5_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 85 'load' 'dataArray_V_5_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%dataArray_V_6_addr_1 = getelementptr [256 x i512]* @dataArray_V_6, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 86 'getelementptr' 'dataArray_V_6_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 87 [2/2] (2.26ns)   --->   "%dataArray_V_6_load = load i512* %dataArray_V_6_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 87 'load' 'dataArray_V_6_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%dataArray_V_7_addr_1 = getelementptr [256 x i512]* @dataArray_V_7, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:120]   --->   Operation 88 'getelementptr' 'dataArray_V_7_addr_1' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_3 : Operation 89 [2/2] (2.26ns)   --->   "%dataArray_V_7_load = load i512* %dataArray_V_7_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 89 'load' 'dataArray_V_7_load' <Predicate = (isEvict_2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+
+State 4 <SV = 3> <Delay = 3.08>
+ST_4 : Operation 90 [1/2] (0.81ns)   --->   "%v1_V = call i24 @_ssdm_op_Mux.ap_auto.8i24.i3(i24 %tag_0_V_read_1, i24 %tag_1_V_read_1, i24 %tag_2_V_read_1, i24 %tag_3_V_read_1, i24 %tag_4_V_read_1, i24 %tag_5_V_read_1, i24 %tag_6_V_read_1, i24 %tag_7_V_read_1, i3 %tmp_20)" [LRUCache/src/cache.cpp:120]   --->   Operation 90 'mux' 'v1_V' <Predicate = true> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%p_Result_s = call i32 @_ssdm_op_BitConcatenate.i32.i24.i8(i24 %v1_V, i8 %indexReg_V)" [LRUCache/src/cache.cpp:120]   --->   Operation 91 'bitconcatenate' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_9_cast = zext i32 %p_Result_s to i33" [LRUCache/src/cache.cpp:120]   --->   Operation 92 'zext' 'tmp_9_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 93 [1/2] (2.26ns)   --->   "%dataArray_V_0_load = load i512* %dataArray_V_0_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 93 'load' 'dataArray_V_0_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 94 [1/2] (2.26ns)   --->   "%dataArray_V_1_load = load i512* %dataArray_V_1_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 94 'load' 'dataArray_V_1_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 95 [1/2] (2.26ns)   --->   "%dataArray_V_2_load = load i512* %dataArray_V_2_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 95 'load' 'dataArray_V_2_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 96 [1/2] (2.26ns)   --->   "%dataArray_V_3_load = load i512* %dataArray_V_3_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 96 'load' 'dataArray_V_3_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 97 [1/2] (2.26ns)   --->   "%dataArray_V_4_load = load i512* %dataArray_V_4_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 97 'load' 'dataArray_V_4_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 98 [1/2] (2.26ns)   --->   "%dataArray_V_5_load = load i512* %dataArray_V_5_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 98 'load' 'dataArray_V_5_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 99 [1/2] (2.26ns)   --->   "%dataArray_V_6_load = load i512* %dataArray_V_6_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 99 'load' 'dataArray_V_6_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 100 [1/2] (2.26ns)   --->   "%dataArray_V_7_load = load i512* %dataArray_V_7_addr_1, align 16" [LRUCache/src/cache.cpp:120]   --->   Operation 100 'load' 'dataArray_V_7_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_4 : Operation 101 [2/2] (0.81ns)   --->   "%tmp_3 = call i512 @_ssdm_op_Mux.ap_auto.8i512.i3(i512 %dataArray_V_0_load, i512 %dataArray_V_1_load, i512 %dataArray_V_2_load, i512 %dataArray_V_3_load, i512 %dataArray_V_4_load, i512 %dataArray_V_5_load, i512 %dataArray_V_6_load, i512 %dataArray_V_7_load, i3 %tmp_20)" [LRUCache/src/cache.cpp:120]   --->   Operation 101 'mux' 'tmp_3' <Predicate = true> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%sext_cast = zext i26 %dram_V_offset_read to i33" [LRUCache/src/cache.cpp:120]   --->   Operation 102 'zext' 'sext_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 103 [1/1] (1.51ns)   --->   "%sum = add i33 %sext_cast, %tmp_9_cast" [LRUCache/src/cache.cpp:120]   --->   Operation 103 'add' 'sum' <Predicate = true> <Delay = 1.51> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 4.37>
+ST_5 : Operation 104 [1/2] (0.81ns)   --->   "%tmp_3 = call i512 @_ssdm_op_Mux.ap_auto.8i512.i3(i512 %dataArray_V_0_load, i512 %dataArray_V_1_load, i512 %dataArray_V_2_load, i512 %dataArray_V_3_load, i512 %dataArray_V_4_load, i512 %dataArray_V_5_load, i512 %dataArray_V_6_load, i512 %dataArray_V_7_load, i3 %tmp_20)" [LRUCache/src/cache.cpp:120]   --->   Operation 104 'mux' 'tmp_3' <Predicate = true> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 105 [1/1] (0.00ns)   --->   "%sum_cast = zext i33 %sum to i64" [LRUCache/src/cache.cpp:120]   --->   Operation 105 'zext' 'sum_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%dram_V_addr = getelementptr i512* %dram_V, i64 %sum_cast" [LRUCache/src/cache.cpp:120]   --->   Operation 106 'getelementptr' 'dram_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 107 [1/1] (4.37ns)   --->   "%dram_V_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i512P(i512* %dram_V_addr, i32 1)" [LRUCache/src/cache.cpp:120]   --->   Operation 107 'writereq' 'dram_V_addr_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 4.37>
+ST_6 : Operation 108 [1/1] (4.37ns)   --->   "call void @_ssdm_op_Write.m_axi.i512P(i512* %dram_V_addr, i512 %tmp_3, i64 -1)" [LRUCache/src/cache.cpp:120]   --->   Operation 108 'write' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 4.37>
+ST_7 : Operation 109 [5/5] (4.37ns)   --->   "%dram_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i512P(i512* %dram_V_addr)" [LRUCache/src/cache.cpp:120]   --->   Operation 109 'writeresp' 'dram_V_addr_resp' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 4.37>
+ST_8 : Operation 110 [4/5] (4.37ns)   --->   "%dram_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i512P(i512* %dram_V_addr)" [LRUCache/src/cache.cpp:120]   --->   Operation 110 'writeresp' 'dram_V_addr_resp' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 4.37>
+ST_9 : Operation 111 [3/5] (4.37ns)   --->   "%dram_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i512P(i512* %dram_V_addr)" [LRUCache/src/cache.cpp:120]   --->   Operation 111 'writeresp' 'dram_V_addr_resp' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 4.37>
+ST_10 : Operation 112 [2/5] (4.37ns)   --->   "%dram_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i512P(i512* %dram_V_addr)" [LRUCache/src/cache.cpp:120]   --->   Operation 112 'writeresp' 'dram_V_addr_resp' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 4.37>
+ST_11 : Operation 113 [1/5] (4.37ns)   --->   "%dram_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i512P(i512* %dram_V_addr)" [LRUCache/src/cache.cpp:120]   --->   Operation 113 'writeresp' 'dram_V_addr_resp' <Predicate = (isEvict_2)> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 114 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge" [LRUCache/src/cache.cpp:121]   --->   Operation 114 'br' <Predicate = (isEvict_2)> <Delay = 0.00>
+ST_11 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_21 = trunc i4 %Hi_assign to i3" [LRUCache/src/cache.cpp:124]   --->   Operation 115 'trunc' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 116 [1/1] (0.00ns)   --->   "%tagArray_0_V_addr = getelementptr [256 x i24]* %tagArray_0_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 116 'getelementptr' 'tagArray_0_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 117 [1/1] (0.00ns)   --->   "%tagArray_1_V_addr = getelementptr [256 x i24]* %tagArray_1_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 117 'getelementptr' 'tagArray_1_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 118 [1/1] (0.00ns)   --->   "%tagArray_2_V_addr = getelementptr [256 x i24]* %tagArray_2_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 118 'getelementptr' 'tagArray_2_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 119 [1/1] (0.00ns)   --->   "%tagArray_3_V_addr = getelementptr [256 x i24]* %tagArray_3_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 119 'getelementptr' 'tagArray_3_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 120 [1/1] (0.00ns)   --->   "%tagArray_4_V_addr = getelementptr [256 x i24]* %tagArray_4_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 120 'getelementptr' 'tagArray_4_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 121 [1/1] (0.00ns)   --->   "%tagArray_5_V_addr = getelementptr [256 x i24]* %tagArray_5_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 121 'getelementptr' 'tagArray_5_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 122 [1/1] (0.00ns)   --->   "%tagArray_6_V_addr = getelementptr [256 x i24]* %tagArray_6_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 122 'getelementptr' 'tagArray_6_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 123 [1/1] (0.00ns)   --->   "%tagArray_7_V_addr = getelementptr [256 x i24]* %tagArray_7_V, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:124]   --->   Operation 123 'getelementptr' 'tagArray_7_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 124 [1/1] (0.00ns)   --->   "%dataArray_V_0_addr = getelementptr [256 x i512]* @dataArray_V_0, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 124 'getelementptr' 'dataArray_V_0_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 125 [1/1] (0.00ns)   --->   "%dataArray_V_1_addr = getelementptr [256 x i512]* @dataArray_V_1, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 125 'getelementptr' 'dataArray_V_1_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 126 [1/1] (0.00ns)   --->   "%dataArray_V_2_addr = getelementptr [256 x i512]* @dataArray_V_2, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 126 'getelementptr' 'dataArray_V_2_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 127 [1/1] (0.00ns)   --->   "%dataArray_V_3_addr = getelementptr [256 x i512]* @dataArray_V_3, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 127 'getelementptr' 'dataArray_V_3_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 128 [1/1] (0.00ns)   --->   "%dataArray_V_4_addr = getelementptr [256 x i512]* @dataArray_V_4, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 128 'getelementptr' 'dataArray_V_4_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 129 [1/1] (0.00ns)   --->   "%dataArray_V_5_addr = getelementptr [256 x i512]* @dataArray_V_5, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 129 'getelementptr' 'dataArray_V_5_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 130 [1/1] (0.00ns)   --->   "%dataArray_V_6_addr = getelementptr [256 x i512]* @dataArray_V_6, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 130 'getelementptr' 'dataArray_V_6_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 131 [1/1] (0.00ns)   --->   "%dataArray_V_7_addr = getelementptr [256 x i512]* @dataArray_V_7, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:125]   --->   Operation 131 'getelementptr' 'dataArray_V_7_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 132 [1/1] (0.88ns)   --->   "switch i3 %tmp_21, label %branch7 [
+    i3 0, label %branch0
+    i3 1, label %branch1
+    i3 2, label %branch2
+    i3 3, label %branch3
+    i3 -4, label %branch4
+    i3 -3, label %branch5
+    i3 -2, label %branch6
+  ]" [LRUCache/src/cache.cpp:124]   --->   Operation 132 'switch' <Predicate = true> <Delay = 0.88>
+ST_11 : Operation 133 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_6_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 133 'store' <Predicate = (tmp_21 == 6)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 134 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_6_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 134 'store' <Predicate = (tmp_21 == 6)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 135 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 135 'br' <Predicate = (tmp_21 == 6)> <Delay = 0.00>
+ST_11 : Operation 136 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_5_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 136 'store' <Predicate = (tmp_21 == 5)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 137 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_5_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 137 'store' <Predicate = (tmp_21 == 5)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 138 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 138 'br' <Predicate = (tmp_21 == 5)> <Delay = 0.00>
+ST_11 : Operation 139 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_4_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 139 'store' <Predicate = (tmp_21 == 4)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 140 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_4_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 140 'store' <Predicate = (tmp_21 == 4)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 141 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 141 'br' <Predicate = (tmp_21 == 4)> <Delay = 0.00>
+ST_11 : Operation 142 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_3_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 142 'store' <Predicate = (tmp_21 == 3)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 143 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_3_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 143 'store' <Predicate = (tmp_21 == 3)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 144 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 144 'br' <Predicate = (tmp_21 == 3)> <Delay = 0.00>
+ST_11 : Operation 145 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_2_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 145 'store' <Predicate = (tmp_21 == 2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 146 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_2_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 146 'store' <Predicate = (tmp_21 == 2)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 147 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 147 'br' <Predicate = (tmp_21 == 2)> <Delay = 0.00>
+ST_11 : Operation 148 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_1_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 148 'store' <Predicate = (tmp_21 == 1)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 149 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_1_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 149 'store' <Predicate = (tmp_21 == 1)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 150 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 150 'br' <Predicate = (tmp_21 == 1)> <Delay = 0.00>
+ST_11 : Operation 151 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_0_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 151 'store' <Predicate = (tmp_21 == 0)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 152 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_0_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 152 'store' <Predicate = (tmp_21 == 0)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 153 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 153 'br' <Predicate = (tmp_21 == 0)> <Delay = 0.00>
+ST_11 : Operation 154 [1/1] (2.26ns)   --->   "store i24 %tagReg_V, i24* %tagArray_7_V_addr, align 4" [LRUCache/src/cache.cpp:124]   --->   Operation 154 'store' <Predicate = (tmp_21 == 7)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 155 [1/1] (2.26ns)   --->   "store i512 %i_wdata_V_read, i512* %dataArray_V_7_addr, align 64" [LRUCache/src/cache.cpp:125]   --->   Operation 155 'store' <Predicate = (tmp_21 == 7)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 156 [1/1] (0.00ns)   --->   "br label %.loopexit286._crit_edge3848"   --->   Operation 156 'br' <Predicate = (tmp_21 == 7)> <Delay = 0.00>
+ST_11 : Operation 157 [1/1] (0.00ns)   --->   "%p_Result_1 = call i8 @_ssdm_op_BitSet.i8.i8.i32.i8(i8 %tempValid_V_1, i32 %Hi_assign_cast, i8 1)" [LRUCache/src/cache.cpp:127]   --->   Operation 157 'bitset' 'p_Result_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 158 [1/1] (0.00ns)   --->   "%validArray_V_1_addr = getelementptr [256 x i8]* %validArray_V_2, i64 0, i64 %tmp" [LRUCache/src/cache.cpp:128]   --->   Operation 158 'getelementptr' 'validArray_V_1_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 159 [1/1] (2.26ns)   --->   "store i8 %p_Result_1, i8* %validArray_V_1_addr, align 1" [LRUCache/src/cache.cpp:128]   --->   Operation 159 'store' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 160 [1/1] (0.00ns)   --->   "%p_Result_2 = call i8 @_ssdm_op_BitSet.i8.i8.i32.i8(i8 %tempMru_V, i32 %Hi_assign_cast, i8 1)" [LRUCache/src/cache.cpp:129]   --->   Operation 160 'bitset' 'p_Result_2' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 161 [1/1] (0.94ns)   --->   "%tmp_6 = icmp eq i8 %p_Result_2, -1" [LRUCache/src/cache.cpp:132]   --->   Operation 161 'icmp' 'tmp_6' <Predicate = true> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 162 [1/1] (0.00ns)   --->   "br i1 %tmp_6, label %.preheader.0, label %._crit_edge" [LRUCache/src/cache.cpp:132]   --->   Operation 162 'br' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 163 [1/1] (0.94ns)   --->   "%val_assign = icmp eq i8 %indexReg_V, 0" [LRUCache/src/cache.cpp:135]   --->   Operation 163 'icmp' 'val_assign' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 164 [1/1] (0.94ns)   --->   "%val_assign_1 = icmp eq i8 %indexReg_V, 1" [LRUCache/src/cache.cpp:135]   --->   Operation 164 'icmp' 'val_assign_1' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 165 [1/1] (0.94ns)   --->   "%val_assign_2 = icmp eq i8 %indexReg_V, 2" [LRUCache/src/cache.cpp:135]   --->   Operation 165 'icmp' 'val_assign_2' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 166 [1/1] (0.94ns)   --->   "%val_assign_3 = icmp eq i8 %indexReg_V, 3" [LRUCache/src/cache.cpp:135]   --->   Operation 166 'icmp' 'val_assign_3' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 167 [1/1] (0.94ns)   --->   "%val_assign_4 = icmp eq i8 %indexReg_V, 4" [LRUCache/src/cache.cpp:135]   --->   Operation 167 'icmp' 'val_assign_4' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 168 [1/1] (0.94ns)   --->   "%val_assign_5 = icmp eq i8 %indexReg_V, 5" [LRUCache/src/cache.cpp:135]   --->   Operation 168 'icmp' 'val_assign_5' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 169 [1/1] (0.94ns)   --->   "%val_assign_6 = icmp eq i8 %indexReg_V, 6" [LRUCache/src/cache.cpp:135]   --->   Operation 169 'icmp' 'val_assign_6' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 170 [1/1] (0.94ns)   --->   "%val_assign_7 = icmp eq i8 %indexReg_V, 7" [LRUCache/src/cache.cpp:135]   --->   Operation 170 'icmp' 'val_assign_7' <Predicate = (tmp_6)> <Delay = 0.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 171 [1/1] (0.00ns)   --->   "%p_Result_8_7 = call i8 @_ssdm_op_BitConcatenate.i8.i1.i1.i1.i1.i1.i1.i1.i1(i1 %val_assign_7, i1 %val_assign_6, i1 %val_assign_5, i1 %val_assign_4, i1 %val_assign_3, i1 %val_assign_2, i1 %val_assign_1, i1 %val_assign)" [LRUCache/src/cache.cpp:135]   --->   Operation 171 'bitconcatenate' 'p_Result_8_7' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_11 : Operation 172 [1/1] (2.26ns)   --->   "store i8 %p_Result_8_7, i8* %mruArray_V_addr, align 1" [LRUCache/src/cache.cpp:137]   --->   Operation 172 'store' <Predicate = (tmp_6)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 256> <RAM>
+ST_11 : Operation 173 [1/1] (0.00ns)   --->   "br label %._crit_edge" [LRUCache/src/cache.cpp:138]   --->   Operation 173 'br' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_11 : Operation 174 [1/1] (0.00ns)   --->   "ret void" [LRUCache/src/cache.cpp:139]   --->   Operation 174 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 2.27ns
+The critical path consists of the following:
+	wire read on port 'i_addr_V' [43]  (0 ns)
+	'getelementptr' operation ('mruArray_V_addr', LRUCache/src/cache.cpp:94) [48]  (0 ns)
+	'load' operation ('tempMru.V', LRUCache/src/cache.cpp:94) on array 'mruArray_V' [49]  (2.27 ns)
+
+ <State 2>: 3.39ns
+The critical path consists of the following:
+	'load' operation ('tempMru.V', LRUCache/src/cache.cpp:94) on array 'mruArray_V' [49]  (2.27 ns)
+	multiplexor before 'phi' operation ('tempValid.V') with incoming values : ('valid_V_read') [103]  (1.12 ns)
+
+ <State 3>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('dataArray_V_0_addr_1', LRUCache/src/cache.cpp:120) [113]  (0 ns)
+	'load' operation ('dataArray_V_0_load', LRUCache/src/cache.cpp:120) on array 'dataArray_V_0' [114]  (2.27 ns)
+
+ <State 4>: 3.08ns
+The critical path consists of the following:
+	'load' operation ('dataArray_V_0_load', LRUCache/src/cache.cpp:120) on array 'dataArray_V_0' [114]  (2.27 ns)
+	'mux' operation ('tmp_3', LRUCache/src/cache.cpp:120) [129]  (0.819 ns)
+
+ <State 5>: 4.38ns
+The critical path consists of the following:
+	'getelementptr' operation ('dram_V_addr', LRUCache/src/cache.cpp:120) [133]  (0 ns)
+	bus request on port 'dram_V' (LRUCache/src/cache.cpp:120) [134]  (4.38 ns)
+
+ <State 6>: 4.38ns
+The critical path consists of the following:
+	bus write on port 'dram_V' (LRUCache/src/cache.cpp:120) [135]  (4.38 ns)
+
+ <State 7>: 4.38ns
+The critical path consists of the following:
+	bus access on port 'dram_V' (LRUCache/src/cache.cpp:120) [136]  (4.38 ns)
+
+ <State 8>: 4.38ns
+The critical path consists of the following:
+	bus access on port 'dram_V' (LRUCache/src/cache.cpp:120) [136]  (4.38 ns)
+
+ <State 9>: 4.38ns
+The critical path consists of the following:
+	bus access on port 'dram_V' (LRUCache/src/cache.cpp:120) [136]  (4.38 ns)
+
+ <State 10>: 4.38ns
+The critical path consists of the following:
+	bus access on port 'dram_V' (LRUCache/src/cache.cpp:120) [136]  (4.38 ns)
+
+ <State 11>: 4.38ns
+The critical path consists of the following:
+	bus access on port 'dram_V' (LRUCache/src/cache.cpp:120) [136]  (4.38 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

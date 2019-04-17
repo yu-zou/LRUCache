@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="cache.h" path="/home/yzou/LRUCache/src/cache.h"/>
     <originFiles name="cache.cpp" path="/home/yzou/LRUCache/src/cache.cpp"/>
+    <originFiles name="cache.h" path="/home/yzou/LRUCache/src/cache.h"/>
   </source>
   <testbench>
     <originFiles name="cache_tb.cpp" path="/home/yzou/LRUCache/src/cache_tb.cpp"/>
