@@ -1,0 +1,161 @@
+INFO-FLOW: Workspace /home/yzou/LRUCache/solution1 opened at Tue Apr 16 19:30:04 EDT 2019
+Execute     config_clock -quiet -name default -period 5 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.2 sec.
+Execute     source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.17 sec.
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.17 sec.
+Command     ap_source done; 0.17 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+Execute     source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source /tools/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7k325tffg900-2 
+Execute       add_library xilinx/kintex7/kintex7:xc7k325t:ffg900:-2 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7k325t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k325tffg900-2'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute     config_chip_info -quiet -speed medium 
+Execute     config_rtl -auto_prefix=0 
+Execute     config_rtl -encoding=onehot 
+Execute     config_rtl -reset=control 
+Execute     config_rtl -reset_async=1 
+Execute     config_rtl -reset_level=high 
+Execute     config_rtl -verbose=0 
+Execute     config_rtl -vivado_impl_strategy=default 
+Execute       send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_impl_strategy config_export -vivado_impl_strategy 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_impl_strategy' command is deprecated and will be removed in a future release. Use 'config_export -vivado_impl_strategy' as its replacement.
+Execute       config_export -vivado_impl_strategy default 
+Execute     config_rtl -vivado_phys_opt=place 
+Execute       send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_phys_opt config_export -vivado_phys_opt 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_phys_opt' command is deprecated and will be removed in a future release. Use 'config_export -vivado_phys_opt' as its replacement.
+Execute       config_export -vivado_phys_opt place 
+Execute     config_rtl -vivado_synth_design_args -directive sdx_optimization_effort_high 
+Execute       send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_synth_design_args config_export -vivado_synth_design_args 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_synth_design_args' command is deprecated and will be removed in a future release. Use 'config_export -vivado_synth_design_args' as its replacement.
+Execute       config_export -vivado_synth_design_args -directive sdx_optimization_effort_high 
+Execute     config_rtl -vivado_synth_strategy=default 
+Execute       send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_synth_strategy config_export -vivado_synth_strategy 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_synth_strategy' command is deprecated and will be removed in a future release. Use 'config_export -vivado_synth_strategy' as its replacement.
+Execute       config_export -vivado_synth_strategy default 
+Command   open_solution done; 0.8 sec.
+Execute   set_part xc7k325tffg900-2 
+Execute     add_library xilinx/kintex7/kintex7:xc7k325t:ffg900:-2 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7k325t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute     add_library xilinx/kintex7/kintex7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 5 -name default 
+Execute   config_rtl -auto_prefix=0 -encoding onehot -reset control -reset_async -reset_level high -verbose=0 -vivado_impl_strategy default -vivado_phys_opt place -vivado_synth_design_args -directive sdx_optimization_effort_high -vivado_synth_strategy default 
+Execute     send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_impl_strategy config_export -vivado_impl_strategy 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_impl_strategy' command is deprecated and will be removed in a future release. Use 'config_export -vivado_impl_strategy' as its replacement.
+Execute     config_export -vivado_impl_strategy default 
+Execute     send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_phys_opt config_export -vivado_phys_opt 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_phys_opt' command is deprecated and will be removed in a future release. Use 'config_export -vivado_phys_opt' as its replacement.
+Execute     config_export -vivado_phys_opt place 
+Execute     send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_synth_design_args config_export -vivado_synth_design_args 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_synth_design_args' command is deprecated and will be removed in a future release. Use 'config_export -vivado_synth_design_args' as its replacement.
+Execute     config_export -vivado_synth_design_args -directive sdx_optimization_effort_high 
+Execute     send_msg_by_id WARNING @200-483@%s%s config_rtl -vivado_synth_strategy config_export -vivado_synth_strategy 
+WARNING: [HLS 200-483] The 'config_rtl -vivado_synth_strategy' command is deprecated and will be removed in a future release. Use 'config_export -vivado_synth_strategy' as its replacement.
+Execute     config_export -vivado_synth_strategy default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'LRUCache/src/cache.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling LRUCache/src/cache.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted LRUCache/src/cache.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "LRUCache/src/cache.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp" 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E LRUCache/src/cache.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2018.3/common/technology/autopilot -I /tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp
+Command       clang done; 2.31 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/yzou/LRUCache/solution1/.autopilot/db/cache.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0

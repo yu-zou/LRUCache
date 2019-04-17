@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="PLRUCache" xd:componentRef="PLRUCache" xd:initiationInterval="19" xd:clockPeriod="5.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:returnValue xd:interfaceRef="ap_return" xd:busTypeRef="register" xd:dataWidth="512"/>
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="*(dram)" xd:originalName="dram" xd:direction="inout" xd:interfaceRef="m_axi_dram" xd:busTypeRef="aximm" xd:arraySize="100" xd:dataWidth="512" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="i_addr" xd:originalName="i_addr" xd:direction="in" xd:interfaceRef="i_addr_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="i_wdata" xd:originalName="i_wdata" xd:direction="in" xd:interfaceRef="i_wdata_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="512"/>
+  <xd:arg xd:name="i_op" xd:originalName="i_op" xd:direction="in" xd:interfaceRef="i_op" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1"/>
+  <xd:arg xd:name="dram.V" xd:originalName="dram" xd:direction="in" xd:interfaceRef="dram_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:aximmInterfaceRef="m_axi_dram" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="4" xd:worst-case="18" xd:average-case="8"/>
+  <xd:resourceEstimates xd:LUT="3979" xd:FF="4738" xd:BRAM="90" xd:DSP="0"/>
+</xd:acceleratorMap>
